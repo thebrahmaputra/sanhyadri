@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--Create jar file-->
+    <groupId>com.myserver</groupId>
+    <artifactId>learn-servers</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <javaee-api.version>7.0</javaee-api.version>
+        <junit.version>4.12</junit.version>
+        <javax.json.version>1.0.4</javax.json.version>
+        <assertj-core.version>3.6.2</assertj-core.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+     <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <outputDirectory>E:\LinkedLerrning\sanhyadri\target\classes</outputDirectory>
+        <testOutputDirectory>E:\LinkedLerrning\sanhyadri\target\test-classes</testOutputDirectory>
+        <resources>
+            <resource>
+                <directory>E:\LinkedLerrning\sanhyadri\src\main\resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>E:\LinkedLerrning\sanhyadri\src\test\resources</directory>
+            </testResource>
+        </testResources>
+        <directory>E:\LinkedLerrning\sanhyadri\target</directory>
+        <finalName>learn-servers-1.0-SNAPSHOT</finalName>
+    <plugins>
+    <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2-beta-5</version>
+        <configuration>
+            <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archiverConfig>
+                <manifest>
+                    <mainClass>DemoServer</mainClass>
+                </manifest>
+            </archiverConfig>
+        </configuration>
+    </plugin>
+    </plugins>
+    </build>
+        <!-- Build an executable JAR -->
+        <!--<packaging>pom</packaging> -->
+
+</project>
